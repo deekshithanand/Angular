@@ -1,0 +1,13 @@
+<div class="container">
+  Like Component!
+<div>
+
+    <i class="fas fa fa-heart fa-3x" [ngStyle]="{
+      'color': isLiked? 'red': 'grey',
+      'cursor':'pointer'
+  
+    }" (click)="like()" ></i>
+    <b class="fa-3x">{{totalLikes}}</b>
+ 
+</div>
+</div>

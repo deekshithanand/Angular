@@ -1,0 +1,10 @@
+<div id="expcomp">
+<ul>
+  Enteres Things!!!
+  <li *ngFor="let p of vals">{{p}}</li>
+</ul>
+<button class="btn btn-primary" (click)="raiseEvent()">Click Me for event raise!!!</button>
+</div>
+<div class="jumbotron">
+  <ng-content></ng-content>
+</div>

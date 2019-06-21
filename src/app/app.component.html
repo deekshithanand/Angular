@@ -1,0 +1,20 @@
+<p><u>Reusable Component here</u></p>
+<app-exp [vals]="times" (keyup)="getEvent()">
+  <br>
+  <ng-container>Content Provided in APPCOMPONENT to expComponent</ng-container>
+</app-exp>
+<div class="alert alert-success" [hidden]="isActive" >
+    <strong>Success!</strong> Event Raised!!! in AppComponent!!!! from expComponent
+  </div>
+
+  <br>
+  <div>
+<h3>
+  <hr/>
+  Directives from here!
+  <hr/>
+  <app-directives></app-directives>
+</h3>
+  </div>
+<app-like></app-like>
+<router-outlet></router-outlet>

@@ -1,0 +1,60 @@
+<input #field (keyup.Enter)="checkNumField(field.value)"/>
+<br/> 
+<div *ngIf="flag; then odd else even"></div>
+<ng-template #odd>
+  ODD NUMBER
+</ng-template>
+<ng-template #even>EVEN NUMBER</ng-template>
+<br>
+<hr>
+Ng SwitchCase:
+<hr>
+
+  <button class="btn" [class.btn-primary]="viewMode=='s1'" (click)="viewMode='s1'">S1</button>
+  <button class="btn" [class.btn-primary]="viewMode=='s2'" (click)="viewMode='s2'">S2</button>
+  <button class="btn" [class.btn-primary]="viewMode=='s3'" (click)="viewMode='s3'">Default</button>
+
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'s1'">
+    SWITCH1
+  </div>
+  <div *ngSwitchCase="'s2'">Switch2</div>
+  <div *ngSwitchDefault>Default Thing</div>
+</div>
+
+<hr>
+<u>NgForOf:</u>
+<div *ngFor="let v of lister; index as i;even as e">
+{{i}}---<span [class.btn-primary]="e">{{v}}</span>
+</div>
+Even is highlighted using ngfors even variable!!!
+
+<hr>
+NgFor Change Detection
+<button class="btn btn-secondary" (click)="addCourse()">Add item</button>
+  <ul>
+    <li *ngFor="let i of totalCourses"> Course {{i}} <button class="btn btn-danger" (click)="removeCourse(i)">Remove</button></li>
+  </ul>
+  
+<hr>
+<u><b>
+  NgClass
+
+</b></u>
+<p>
+  For this button multiple classes is applied using ngClass property!
+</p>
+<hr>
+<div><button [ngClass]="{
+  'btn':true,
+  'btn-primary':isSelected,
+  'btn-secondary':!isSelected
+}" (click)="toggle()">Click ME To Toggle!</button></div>
+<hr>
+<u><b>
+  NgStyle
+</b></u>
+<hr>
+<button class="btn" [ngStyle]="{
+  'background-color':isSelected?'red':'grey'
+}" (click)=toggle()>Click to toggle</button>
